@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profil Mahasiswa</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;padding:16px}
+  .card{background:rgba(255,255,255,.15);border-radius:16px;padding:32px;max-width:420px;width:100%;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+  h1{margin:0 0 4px;font-size:1.6rem}
+  .sub{opacity:.9;margin-bottom:16px}
+  .clock{font-size:1.4rem;font-weight:600;margin:12px 0}
+  ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  li{background:rgba(255,255,255,.25);padding:6px 12px;border-radius:999px;font-size:.9rem}
+  button{background:#fff;color:#0f766e;border:0;border-radius:8px;padding:10px 20px;font-weight:700;cursor:pointer;margin-top:8px}
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>👋 Halo, saya [Nama Kamu]</h1>
+    <div class="sub">[NIM] · Sistem Informasi · Telkom University Jakarta</div>
+    <div class="clock" id="clock"></div>
+    <ul>
+      <li>Cloud Computing</li><li>Microsoft Azure</li><li>GitHub</li><li>HTML</li>
+    </ul>
+    <p>Website ini berjalan di Azure Static Web Apps.</p>
+    <button id="btn">Klik: 0</button>
+  </div>
+<script>
+  var n = 0;
+  document.getElementById('btn').onclick = function(){ n++; this.textContent = 'Klik: ' + n; };
+  function tick(){ document.getElementById('clock').textContent = new Date().toLocaleString('id-ID'); }
+  tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
